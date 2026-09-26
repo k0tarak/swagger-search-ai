@@ -1,0 +1,5 @@
+@import 'swagger-ui-dist/swagger-ui.css';
+@import './search.css';
+@import './assistant.css';
+
+.swagger-search-ai-swagger .responses-inner { overflow-x: auto; }

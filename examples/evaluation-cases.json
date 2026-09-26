@@ -1,0 +1,8 @@
+[
+  { "query": "How can I list books?", "kind": "operation", "name": "ListBooks", "top": 1 },
+  { "query": "book title", "kind": "field", "name": "title", "top": 3 },
+  { "query": "next cursor", "kind": "field", "name": "nextCursor", "top": 3 },
+  { "query": "WebSocket event", "kind": "model", "name": "RealtimeEvent", "top": 3 },
+  { "query": "How do I list books with the next cursor?", "mode": "assistant", "kind": "operation", "name": "ListBooks", "top": 3, "contextIncludes": ["nextCursor"] },
+  { "query": "What is RealtimeEvent.kind?", "mode": "assistant", "kind": "model", "name": "RealtimeEvent", "top": 3, "contextIncludes": ["connected"] }
+]

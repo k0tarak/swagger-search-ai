@@ -1,0 +1,73 @@
+{
+  "openapi": "3.0.3",
+  "info": { "title": "Library API", "version": "1.0.0" },
+  "paths": {
+    "/books": {
+      "get": {
+        "operationId": "ListBooks",
+        "tags": ["Books"],
+        "summary": "List books",
+        "description": "Returns a page of books in the library.",
+        "parameters": [
+          { "name": "cursor", "in": "query", "description": "Cursor for the next page.", "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of books.",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/BookPage" } } }
+          }
+        }
+      },
+      "post": {
+        "operationId": "CreateBook",
+        "tags": ["Books"],
+        "summary": "Create a book",
+        "requestBody": {
+          "content": { "application/json": { "schema": { "$ref": "#/components/schemas/NewBook" } } }
+        },
+        "responses": { "201": { "description": "Created.", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Book" } } } } }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Book": {
+        "type": "object",
+        "description": "A catalog book.",
+        "required": ["id", "title"],
+        "properties": {
+          "id": { "type": "string", "description": "Stable book identifier." },
+          "title": { "type": "string", "description": "Public book title." },
+          "related": { "type": "array", "items": { "$ref": "#/components/schemas/Book" } }
+        }
+      },
+      "NewBook": {
+        "allOf": [
+          { "type": "object", "properties": { "title": { "type": "string", "description": "Title to create." } } }
+        ]
+      },
+      "BookPage": {
+        "type": "object",
+        "properties": {
+          "items": { "type": "array", "items": { "$ref": "#/components/schemas/Book" } },
+          "nextCursor": { "type": "string", "description": "Cursor for the next page." }
+        }
+      },
+      "RealtimeEvent": {
+        "type": "object",
+        "description": "Standalone WebSocket event; it has no HTTP operation.",
+        "properties": {
+          "kind": { "type": "string", "enum": ["connected", "changed"], "description": "Event kind." },
+          "payload": { "$ref": "#/components/schemas/EventPayload" }
+        }
+      },
+      "EventPayload": {
+        "type": "object",
+        "properties": {
+          "sequence": { "type": "integer", "description": "Monotonic event sequence number." },
+          "previous": { "$ref": "#/components/schemas/EventPayload" }
+        }
+      }
+    }
+  }
+}

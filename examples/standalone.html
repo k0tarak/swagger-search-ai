@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Library API · standalone example</title>
+  <link rel="stylesheet" href="../dist/standalone.css">
+</head>
+<body>
+  <div id="docs"></div>
+  <script src="../dist/standalone.js"></script>
+  <script>
+    SwaggerSearchAI.mount({
+      element: document.getElementById('docs'),
+      openapi: '../fixtures/library.openapi.json',
+      title: 'Library API',
+      ai: true
+    });
+  </script>
+</body>
+</html>

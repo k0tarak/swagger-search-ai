@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Multiple OpenAPI documents</title>
+  <link rel="stylesheet" href="../dist/standalone.css">
+</head>
+<body>
+  <div id="docs"></div>
+  <script src="../dist/standalone.js"></script>
+  <script>
+    SwaggerSearchAI.mount({
+      element: document.getElementById('docs'),
+      title: 'Example API catalog',
+      openapi: [
+        { name: 'Library', url: '../fixtures/library.openapi.json' },
+        { name: 'Pets', url: '../fixtures/pets.openapi.json' }
+      ],
+      primaryName: 'Library'
+    });
+  </script>
+</body>
+</html>
