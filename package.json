@@ -1,14 +1,17 @@
 {
   "name": "@k0tarak/swagger-search-ai",
   "version": "0.1.0",
-  "description": "Browser-side OpenAPI search and optional OpenRouter assistant for Swagger UI",
+  "description": "Configurable search for Swagger UI with an optional OpenRouter AI assistant",
   "license": "MIT",
   "keywords": [
-    "openapi",
+    "swagger",
     "swagger-ui",
+    "openapi",
+    "api-documentation",
     "search",
+    "full-text-search",
     "openrouter",
-    "documentation"
+    "ai-assistant"
   ],
   "repository": {
     "type": "git",

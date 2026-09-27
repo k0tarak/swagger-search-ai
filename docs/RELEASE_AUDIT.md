@@ -1,6 +1,6 @@
 # Pre-publication audit — 2026-09-26
 
-The package is now a release candidate for the documented scope. This audit does not establish universal Swagger compatibility or guarantee product adoption. No npm publication was performed.
+This historical audit records the preparation of version 0.1.0, subsequently published on 2026-09-26. It documents the tested scope and limitations at that time; it is not an installation guide or a guarantee for other Swagger integrations.
 
 ## Changes made
 
