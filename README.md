@@ -40,13 +40,13 @@ Add the package's CSS and script, create the controls outside Swagger UI's conta
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>API documentation</title>
   <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5.33.0/swagger-ui.css">
-  <link rel="stylesheet" href="https://unpkg.com/@k0tarak/swagger-search-ai@0.1.0/plugin.css">
+  <link rel="stylesheet" href="https://unpkg.com/@k0tarak/swagger-search-ai@0.1.1/plugin.css">
 </head>
 <body>
   <div id="search-controls"></div>
   <div id="swagger-ui"></div>
   <script src="https://unpkg.com/swagger-ui-dist@5.33.0/swagger-ui-bundle.js"></script>
-  <script src="https://unpkg.com/@k0tarak/swagger-search-ai@0.1.0/plugin.js"></script>
+  <script src="https://unpkg.com/@k0tarak/swagger-search-ai@0.1.1/plugin.js"></script>
   <script>
     const extension = SwaggerSearchAI.createSwaggerSearch({
       element: document.getElementById('search-controls'),
@@ -68,7 +68,7 @@ Add the package's CSS and script, create the controls outside Swagger UI's conta
 
 Serve this page over HTTP(S) and change `/openapi.json` to your specification URL. Keep your existing Swagger UI options and plugins when adding the extension. Search works immediately after the specification loads. Set `ai: false` or omit `ai` to show search alone.
 
-**Updates:** the example pins version `0.1.0`. To follow new releases automatically, replace `@0.1.0` with `@latest` in **both** package URLs. The next page load picks up the latest release after CDN caches refresh; it does not update an already open page. Keep JavaScript and CSS on the same version or tag. [UNPKG version and cache behavior](https://unpkg.com/#cache-performance).
+**Updates:** the example pins version `0.1.1`. To follow new releases automatically, replace `@0.1.1` with `@latest` in **both** package URLs. The next page load picks up the latest release after CDN caches refresh; it does not update an already open page. Keep JavaScript and CSS on the same version or tag. [UNPKG version and cache behavior](https://unpkg.com/#cache-performance).
 
 FastAPI, Swashbuckle/.NET, springdoc, and other servers can use this integration wherever they allow customizing the Swagger HTML and initialization. Loading the script after Swagger UI has already initialized is not enough: register `extension.plugin` during initialization and call `extension.attach(ui)` after each specification loads.
 
@@ -77,9 +77,9 @@ FastAPI, Swashbuckle/.NET, springdoc, and other servers can use this integration
 If you are creating a documentation page from scratch, the standalone script includes Swagger UI:
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@k0tarak/swagger-search-ai@0.1.0/standalone.css">
+<link rel="stylesheet" href="https://unpkg.com/@k0tarak/swagger-search-ai@0.1.1/standalone.css">
 <div id="docs"></div>
-<script src="https://unpkg.com/@k0tarak/swagger-search-ai@0.1.0/standalone.js"></script>
+<script src="https://unpkg.com/@k0tarak/swagger-search-ai@0.1.1/standalone.js"></script>
 <script>
   SwaggerSearchAI.mount({
     element: document.getElementById('docs'),

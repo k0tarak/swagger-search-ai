@@ -1,6 +1,6 @@
 {
   "name": "@k0tarak/swagger-search-ai",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Configurable search for Swagger UI with an optional OpenRouter AI assistant",
   "license": "MIT",
   "keywords": [

@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.1 — 2026-09-27
+
+Documentation and package metadata update. Runtime behavior and dependencies are unchanged.
+
+- Reorganize the README around installation, configuration, and everyday use, with navigation and screenshots of search and the assistant.
+- Add a complete CDN integration example and explain pinned versions and automatic updates through `@latest`.
+- Move detailed configuration and development guidance into dedicated reference documents; remove the first-release checklist from the README.
+- Clarify package discovery metadata, compatibility, API key handling, and AI limitations.
+
 ## 0.1.0 — 2026-09-26
 
 Initial public release.
